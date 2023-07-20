@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.22.1",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",

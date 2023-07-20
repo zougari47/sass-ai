@@ -1,7 +1,11 @@
 import React from 'react'
 
 const HomePage = () => {
-  return <div className="text-4xl text-center">This is the home page</div>
+  return (
+    <div>
+      <h1>landing page </h1>
+    </div>
+  )
 }
 
 export default HomePage
