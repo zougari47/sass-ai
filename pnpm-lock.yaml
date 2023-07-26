@@ -2,7 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@clerk/nextjs': ^4.22.1
+  '@hookform/resolvers': ^3.1.1
   '@radix-ui/react-dialog': ^1.0.4
+  '@radix-ui/react-label': ^2.0.2
   '@radix-ui/react-slot': ^1.0.2
   '@types/node': 20.4.2
   '@types/react': 18.2.15
@@ -17,14 +19,18 @@ specifiers:
   postcss: 8.4.26
   react: 18.2.0
   react-dom: 18.2.0
+  react-hook-form: ^7.45.2
   tailwind-merge: ^1.14.0
   tailwindcss: 3.3.3
   tailwindcss-animate: ^1.0.6
   typescript: 5.1.6
+  zod: ^3.21.4
 
 dependencies:
   '@clerk/nextjs': 4.22.1_ajgs2obdksmy6bafrtpl2cn7xi
+  '@hookform/resolvers': 3.1.1_react-hook-form@7.45.2
   '@radix-ui/react-dialog': 1.0.4_uas4yajzsllemiyrexr66mus4q
+  '@radix-ui/react-label': 2.0.2_uas4yajzsllemiyrexr66mus4q
   '@radix-ui/react-slot': 1.0.2_tznpbkknyqq5lcv5sgrl332jvu
   '@types/node': 20.4.2
   '@types/react': 18.2.15
@@ -39,10 +45,12 @@ dependencies:
   postcss: 8.4.26
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-hook-form: 7.45.2_react@18.2.0
   tailwind-merge: 1.14.0
   tailwindcss: 3.3.3
   tailwindcss-animate: 1.0.6_tailwindcss@3.3.3
   typescript: 5.1.6
+  zod: 3.21.4
 
 packages:
 
@@ -176,6 +184,14 @@ packages:
   /@eslint/js/8.44.0:
     resolution: {integrity: sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@hookform/resolvers/3.1.1_react-hook-form@7.45.2:
+    resolution: {integrity: sha512-tS16bAUkqjITNSvbJuO1x7MXbn7Oe8ZziDTJdA9mMvsoYthnOOiznOTGBYwbdlYBgU+tgpI/BtTU3paRbCuSlg==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.45.2_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.10:
@@ -525,6 +541,27 @@ packages:
       '@radix-ui/react-use-layout-effect': 1.0.1_tznpbkknyqq5lcv5sgrl332jvu
       '@types/react': 18.2.15
       react: 18.2.0
+    dev: false
+
+  /@radix-ui/react-label/2.0.2_uas4yajzsllemiyrexr66mus4q:
+    resolution: {integrity: sha512-N5ehvlM7qoTLx7nWPodsPYPgMzA5WM8zZChQg8nyFJKnDO5WHdba1vv5/H6IO5LtJMfD2Q3wh1qHFGNtK0w3bQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@radix-ui/react-primitive': 1.0.3_uas4yajzsllemiyrexr66mus4q
+      '@types/react': 18.2.15
+      '@types/react-dom': 18.2.7
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@radix-ui/react-portal/1.0.3_uas4yajzsllemiyrexr66mus4q:
@@ -2824,6 +2861,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-hook-form/7.45.2_react@18.2.0:
+    resolution: {integrity: sha512-9s45OdTaKN+4NSTbXVqeDITd/nwIg++nxJGL8+OD5uf1DxvhsXQ641kaYHk5K28cpIOTYm71O/fYk7rFaygb3A==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:
