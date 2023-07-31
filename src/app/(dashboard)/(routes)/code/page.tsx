@@ -1,25 +1,25 @@
 'use client'
 
+import Empty from '@/components/Empty'
 import Heading from '@/components/Heading'
+import Loader from '@/components/Loader'
+import BotAvatar from '@/components/bot-avatar'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import UserAvatar from '@/components/user-avatar'
+import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios'
-import { MessageSquare } from 'lucide-react'
+import { Code } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { useForm } from 'react-hook-form'
-import { IFormSchema, formSchema } from './constants'
 import { ChatCompletionRequestMessage } from 'openai'
 import { useState } from 'react'
-import Empty from '@/components/Empty'
-import Loader from '@/components/Loader'
-import { cn } from '@/lib/utils'
-import UserAvatar from '@/components/user-avatar'
-import BotAvatar from '@/components/bot-avatar'
+import { useForm } from 'react-hook-form'
 import ReactMarkdown from 'react-markdown'
+import { IFormSchema, formSchema } from './constants'
 
-const ConversationPage = () => {
+const CodePage = () => {
   const router = useRouter()
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
   const form = useForm<IFormSchema>({
@@ -56,7 +56,7 @@ const ConversationPage = () => {
       <Heading
         title="Code Generation"
         description="Generate code using descriptive text."
-        icon={MessageSquare}
+        icon={Code}
         iconColor="text-green-700"
         bgColor="bg-green-700/10"
       />
@@ -145,4 +145,4 @@ const ConversationPage = () => {
   )
 }
 
-export default ConversationPage
+export default CodePage
