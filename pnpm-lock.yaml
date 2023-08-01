@@ -25,6 +25,7 @@ specifiers:
   react-dom: 18.2.0
   react-hook-form: ^7.45.2
   react-markdown: ^8.0.7
+  replicate: ^0.14.1
   tailwind-merge: ^1.14.0
   tailwindcss: 3.3.3
   tailwindcss-animate: ^1.0.6
@@ -56,6 +57,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.45.2_react@18.2.0
   react-markdown: 8.0.7_tznpbkknyqq5lcv5sgrl332jvu
+  replicate: 0.14.1
   tailwind-merge: 1.14.0
   tailwindcss: 3.3.3
   tailwindcss-animate: 1.0.6_tailwindcss@3.3.3
@@ -3634,6 +3636,11 @@ packages:
       '@types/mdast': 3.0.12
       mdast-util-to-hast: 12.3.0
       unified: 10.1.2
+    dev: false
+
+  /replicate/0.14.1:
+    resolution: {integrity: sha512-3NpuNRbvXoEjY+n/ra24VfQyIRCdLub9GCrU51fFTrMaa6OjRvMC9jGDJSpGRXOLvID75mFgN577HEhA3XEFtg==}
+    engines: {git: '>=2.11.0', node: '>=16.6.0', npm: '>=7.19.0', yarn: '>=1.7.0'}
     dev: false
 
   /resolve-from/4.0.0:
