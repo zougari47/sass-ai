@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
+import FreeCounter from '@/components/free-counter'
 
 const monsterrat = Montserrat({
   weight: '600',
@@ -65,7 +66,11 @@ const routes = [
   },
 ]
 
-const SideBar = () => {
+interface SidebarProps {
+  apiLimitCount: number
+}
+
+const SideBar = ({ apiLimitCount }: SidebarProps) => {
   const [isMounted, setIsMounted] = useState(false)
   const pathname = usePathname()
 
@@ -106,6 +111,8 @@ const SideBar = () => {
           ))}
         </div>
       </div>
+
+      <FreeCounter apiLimitCount={apiLimitCount} />
     </div>
   )
 }
