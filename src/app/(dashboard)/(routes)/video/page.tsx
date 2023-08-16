@@ -13,8 +13,10 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { IFormSchema, formSchema } from './constants'
+import { userProModal } from '@/hook/user-pro-modal'
 
 const VideoPage = () => {
+  const { onOpen } = userProModal()
   const router = useRouter()
   const [video, setVideo] = useState<string>()
   const form = useForm<IFormSchema>({
@@ -33,8 +35,10 @@ const VideoPage = () => {
       const response = await axios.post('/api/video', values)
 
       setVideo(response.data[0])
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        onOpen() // open pro modal
+      }
     } finally {
       router.refresh()
     }

@@ -18,8 +18,10 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import ReactMarkdown from 'react-markdown'
 import { IFormSchema, formSchema } from './constants'
+import { userProModal } from '@/hook/user-pro-modal'
 
 const CodePage = () => {
+  const { onOpen } = userProModal()
   const router = useRouter()
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
   const form = useForm<IFormSchema>({
@@ -44,8 +46,10 @@ const CodePage = () => {
       })
 
       setMessages(current => [...current, userMessage, response.data])
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        onOpen() // open pro modal
+      }
     } finally {
       router.refresh()
     }

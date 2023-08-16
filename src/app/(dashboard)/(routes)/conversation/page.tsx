@@ -18,8 +18,10 @@ import Loader from '@/components/Loader'
 import { cn } from '@/lib/utils'
 import UserAvatar from '@/components/user-avatar'
 import BotAvatar from '@/components/bot-avatar'
+import { userProModal } from '@/hook/user-pro-modal'
 
 const ConversationPage = () => {
+  const { onOpen } = userProModal()
   const router = useRouter()
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([])
   const form = useForm<IFormSchema>({
@@ -44,8 +46,10 @@ const ConversationPage = () => {
       })
 
       setMessages(current => [...current, userMessage, response.data])
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        onOpen() // open pro modal
+      }
     } finally {
       router.refresh()
     }

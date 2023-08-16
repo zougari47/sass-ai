@@ -27,8 +27,10 @@ import {
   resolutionOptions,
 } from './constants'
 import { Card, CardFooter } from '@/components/ui/card'
+import { userProModal } from '@/hook/user-pro-modal'
 
 const ImagePage = () => {
+  const { onOpen } = userProModal()
   const [images, setImages] = useState<string[]>([])
   const router = useRouter()
   const form = useForm<IFormSchema>({
@@ -49,8 +51,10 @@ const ImagePage = () => {
       const urls = response.data.map((image: { url: string }) => image.url)
       setImages(urls)
       form.reset()
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        onOpen() // open pro modal
+      }
     } finally {
       router.refresh()
     }
