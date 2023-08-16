@@ -17,12 +17,15 @@ import {
   Check,
   Code,
   ImageIcon,
+  Loader,
   MessageSquare,
   Music,
   VideoIcon,
   Zap,
 } from 'lucide-react'
 import { Button } from './ui/button'
+import axios from 'axios'
+import { useState } from 'react'
 
 const tools = [
   {
@@ -60,8 +63,21 @@ const tools = [
 const ProModal = () => {
   const { isMounted } = useClient()
   const { isOpen, onClose } = userProModal()
+  const [loading, setLoading] = useState(false)
 
   if (!isMounted) return null
+
+  const onSubscribe = async () => {
+    setLoading(true)
+    try {
+      const response = await axios.get('/api/stripe')
+      window.location.href = response.data.url
+    } catch (error: any) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -94,8 +110,20 @@ const ProModal = () => {
           </DialogDescription>
 
           <DialogFooter className="w-full">
-            <Button size="lg" variant="premium" className="w-full">
-              Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+            <Button
+              size="lg"
+              variant="premium"
+              className="w-full"
+              onClick={onSubscribe}
+              disabled={loading}
+            >
+              {loading ? (
+                <Loader className="w-4 h-4 ml-2 fill-white animate-spin" />
+              ) : (
+                <>
+                  Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+                </>
+              )}
             </Button>
           </DialogFooter>
         </DialogHeader>

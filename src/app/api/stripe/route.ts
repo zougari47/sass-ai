@@ -58,6 +58,8 @@ export async function GET(req: Request) {
         userId,
       },
     })
+
+    return new NextResponse(JSON.stringify({ url: stripeSession.url }))
   } catch (error) {
     console.log('[STRIPE_ERROR]', error)
     return new NextResponse('Stripe Error', { status: 500 })
