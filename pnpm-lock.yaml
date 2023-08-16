@@ -30,6 +30,7 @@ specifiers:
   react-markdown: ^8.0.7
   replicate: ^0.14.1
   sqlite3: ^5.1.6
+  stripe: ^12.18.0
   tailwind-merge: ^1.14.0
   tailwindcss: 3.3.3
   tailwindcss-animate: ^1.0.6
@@ -66,6 +67,7 @@ dependencies:
   react-markdown: 8.0.7_tznpbkknyqq5lcv5sgrl332jvu
   replicate: 0.14.1
   sqlite3: 5.1.6
+  stripe: 12.18.0
   tailwind-merge: 1.14.0
   tailwindcss: 3.3.3
   tailwindcss-animate: 1.0.6_tailwindcss@3.3.3
@@ -3836,6 +3838,13 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: false
 
+  /qs/6.11.2:
+    resolution: {integrity: sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.4
+    dev: false
+
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: false
@@ -4313,6 +4322,14 @@ packages:
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+    dev: false
+
+  /stripe/12.18.0:
+    resolution: {integrity: sha512-cYjgBM2SY/dTm8Lr6eMyyONaHTZHA/QjHxFUIW5WH8FevSRIGAVtXEmBkUXF1fsqe7QvvRgQSGSJZmjDacegGg==}
+    engines: {node: '>=12.*'}
+    dependencies:
+      '@types/node': 20.4.2
+      qs: 6.11.2
     dev: false
 
   /style-to-object/0.4.2:

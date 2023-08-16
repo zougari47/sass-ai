@@ -12,7 +12,6 @@ interface IMobileSideBarProps {
 }
 
 const MobileSideBar = ({ apiLimitCount }: IMobileSideBarProps) => {
-  console.log(apiLimitCount)
   const { isMounted } = useClient()
 
   if (!isMounted) return null

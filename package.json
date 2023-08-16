@@ -36,6 +36,7 @@
     "react-markdown": "^8.0.7",
     "replicate": "^0.14.1",
     "sqlite3": "^5.1.6",
+    "stripe": "^12.18.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.6",
