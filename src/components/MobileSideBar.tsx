@@ -9,9 +9,13 @@ import useClient from '@/hook/useClient'
 
 interface IMobileSideBarProps {
   apiLimitCount: number
+  isPro: boolean
 }
 
-const MobileSideBar = ({ apiLimitCount }: IMobileSideBarProps) => {
+const MobileSideBar = ({
+  apiLimitCount,
+  isPro = false,
+}: IMobileSideBarProps) => {
   const { isMounted } = useClient()
 
   if (!isMounted) return null
@@ -25,7 +29,7 @@ const MobileSideBar = ({ apiLimitCount }: IMobileSideBarProps) => {
       </SheetTrigger>
 
       <SheetContent side="left" className="p-0">
-        <SideBar apiLimitCount={apiLimitCount} />
+        <SideBar isPro={isPro} apiLimitCount={apiLimitCount} />
       </SheetContent>
     </Sheet>
   )
