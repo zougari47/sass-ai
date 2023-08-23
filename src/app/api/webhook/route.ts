@@ -4,10 +4,9 @@ import { NextResponse } from 'next/server'
 
 import db from '@/lib/db'
 import { stripe } from '@/lib/stripe'
-import prismadb from '@/lib/db'
 
-export async function GET(req: Request) {
-  const body = await req.json()
+export async function POST(req: Request) {
+  const body = await req.text()
   const signature = headers().get('Stripe-Signature') as string
 
   let event: Stripe.Event
@@ -52,7 +51,7 @@ export async function GET(req: Request) {
       session.subscription as string
     )
 
-    await prismadb.userSubscription.update({
+    await db.userSubscription.update({
       where: {
         stripeSubscriptionId: subscription.id,
       },
