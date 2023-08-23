@@ -10,15 +10,21 @@ import { userProModal } from '@/hook/user-pro-modal'
 
 interface FreeCounterProps {
   apiLimitCount: number
+  isPro: boolean
 }
 
-const FreeCounter = ({ apiLimitCount }: FreeCounterProps) => {
+const FreeCounter = ({
+  apiLimitCount = 0,
+  isPro = false,
+}: FreeCounterProps) => {
   const [isMounted, setIsMounted] = useState(false)
   const { onOpen } = userProModal()
 
   useEffect(() => setIsMounted(true), [])
 
   if (!isMounted) return null
+
+  if (isPro) return null
 
   return (
     <div className="px-3">
