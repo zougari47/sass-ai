@@ -17,6 +17,7 @@ specifiers:
   axios: ^1.4.0
   class-variance-authority: ^0.7.0
   clsx: ^2.0.0
+  crisp-sdk-web: ^1.0.21
   eslint: 8.45.0
   eslint-config-next: 13.4.10
   lucide-react: ^0.261.0
@@ -56,6 +57,7 @@ dependencies:
   axios: 1.4.0
   class-variance-authority: 0.7.0
   clsx: 2.0.0
+  crisp-sdk-web: 1.0.21
   eslint: 8.45.0
   eslint-config-next: 13.4.10_ko3fmmbeyij36muomfgt2u76xu
   lucide-react: 0.261.0_react@18.2.0
@@ -1745,6 +1747,10 @@ packages:
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /crisp-sdk-web/1.0.21:
+    resolution: {integrity: sha512-jNF/zSSA0lsAWT3q4JLG6YxtMRvgai++PwesxEL2Zm6utZaN+AoWPAH01QTfjJC/c++nFT7YM56ucdi+Y5yP4A==}
     dev: false
 
   /cross-spawn/7.0.3:
