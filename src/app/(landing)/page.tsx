@@ -1,17 +1,17 @@
+import LandingContent from '@/components/landing-content'
+import LandingHero from '@/components/landing-hero'
+import LandingNavbar from '@/components/landing-navbar'
 import { buttonVariants } from '@/components/ui/button'
+
 import Link from 'next/link'
 import React from 'react'
 
 const HomePage = () => {
   return (
-    <div className="container space-y-10">
-      <h1>landing page </h1>
-
-      <div>
-        <Link href="/dashboard" className={buttonVariants()}>
-          Dashboard
-        </Link>
-      </div>
+    <div className="h-full">
+      <LandingNavbar />
+      <LandingHero />
+      <LandingContent />
     </div>
   )
 }
