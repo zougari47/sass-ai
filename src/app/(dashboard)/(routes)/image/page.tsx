@@ -28,6 +28,7 @@ import {
 } from './constants'
 import { Card, CardFooter } from '@/components/ui/card'
 import { userProModal } from '@/hook/user-pro-modal'
+import toast from 'react-hot-toast'
 
 const ImagePage = () => {
   const { onOpen } = userProModal()
@@ -54,6 +55,8 @@ const ImagePage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         onOpen() // open pro modal
+      } else {
+        toast.error('Something went wrong')
       }
     } finally {
       router.refresh()

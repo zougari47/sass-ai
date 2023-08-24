@@ -14,6 +14,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { IFormSchema, formSchema } from './constants'
 import { userProModal } from '@/hook/user-pro-modal'
+import { toast } from 'react-hot-toast'
 
 const MusicPage = () => {
   const { onOpen } = userProModal()
@@ -38,6 +39,8 @@ const MusicPage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         onOpen() // open pro modal
+      } else {
+        toast.error('Something went wrong')
       }
     } finally {
       router.refresh()

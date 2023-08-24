@@ -19,6 +19,7 @@ import { useForm } from 'react-hook-form'
 import ReactMarkdown from 'react-markdown'
 import { IFormSchema, formSchema } from './constants'
 import { userProModal } from '@/hook/user-pro-modal'
+import toast from 'react-hot-toast'
 
 const CodePage = () => {
   const { onOpen } = userProModal()
@@ -49,6 +50,8 @@ const CodePage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         onOpen() // open pro modal
+      } else {
+        toast.error('Something went wrong')
       }
     } finally {
       router.refresh()
