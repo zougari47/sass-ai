@@ -17,7 +17,7 @@ These instructions will help you set up a local copy of the project on your mach
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) ==
+- [Node.js](https://nodejs.org/)
 - [pnpm](https://pnpm.io/) or any package manager you like
 -
 
