@@ -1,34 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Your App Name
+
+Welcome to **SAAS AI**! This is a [Next.js](https://nextjs.org/) application Inspired By [Code With Antonio](https://www.youtube.com/@codewithantonio) designed to showcase the integration of [Open AI](https://openai.com/) and [Replicate](https://replicate.com/) for creating 5 AI generators (chat, code, image, music and video) plus using [stripe](https://stripe.com/) for payment and [crisp](https://crisp.chat/en/) for customer support.
+
+![App Screenshot](/public/screenshot.png)
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Technologies](#technologies)
 
 ## Getting Started
 
-First, run the development server:
+These instructions will help you set up a local copy of the project on your machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Node.js](https://nodejs.org/) ==
+- [pnpm](https://pnpm.io/) or any package manager you like
+-
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
 
-## Learn More
+   ```bash
+   git clone https://github.com/zougari47/sass-ai.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   pnpm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Add .env file in root directory:
 
-## Deploy on Vercel
+   ```plaintext
+   ### .env file example
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+
+   OPENAI_API_KEY=
+
+   REPLICATE_API_KEY=
+
+   STRIPE_API_KEY=
+   STRIPE_WEBHOOK_SECRET=
+
+   NEXT_PUBLIC_API_URL=http://localhost:3000
+   NEXT_PUBLIC_CRISP_CHAT_ID=
+   ```
+
+4. Run the project:
+   ```bash
+   pnpm dev
+   ```
+
+### Technologies
+
+<!-- write front on every technologies it description -->
+
+- [Next.js](https://nextjs.org/) React full stack framework
+- [Tailwind CSS](https://tailwindcss.com/) Utility-first CSS framework
+- [Shadcn-ui](https://ui.shadcn.com/) Re-usable components built using Radix UI and Tailwind CSS.
+- [Prisma](https://www.prisma.io/) Modern database ORM toolkit
+- [Open AI](https://openai.com/) AI API
+- [Replicate](https://replicate.com/) AI API
+- [Stripe](https://stripe.com/) Online payments gateway
+- [Crisp](https://crisp.chat/en/) Customer messaging and support
