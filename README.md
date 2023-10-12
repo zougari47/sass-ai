@@ -1,4 +1,4 @@
-# Your App Name
+# SASS AI
 
 Welcome to **SAAS AI**! This is a [Next.js](https://nextjs.org/) application Inspired By [Code With Antonio](https://www.youtube.com/@codewithantonio) designed to showcase the integration of [Open AI](https://openai.com/) and [Replicate](https://replicate.com/) for creating 5 AI generators (chat, code, image, music and video) plus using [stripe](https://stripe.com/) for payment and [crisp](https://crisp.chat/en/) for customer support.
 
